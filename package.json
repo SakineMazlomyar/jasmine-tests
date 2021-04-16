@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "matchers": "jasmine matchers.js"
+    "matchers": "jasmine matchers.js",
+    "each": "jasmine each.js"
   },
   "author": "",
   "license": "ISC",
