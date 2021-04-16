@@ -83,3 +83,27 @@ describe('jasmine.stringMatching and with a createSpy', () => {
         expect(foo).toHaveBeenCalledOnceWith(jasmine.stringMatching(/sakine/i))
     })
 })
+
+
+describe('jasmine.clock', () => {
+    let timerCallBack
+    beforeEach(() => {
+        timerCallBack = jasmine.createSpy('callback')
+        jasmine.clock().install()
+    })
+
+    afterEach(()=>{
+        jasmine.clock().uninstall()
+    })
+
+
+    it('casue timerCallBack to be call after 3s', () => {
+        setTimeout(() => {
+            timerCallBack()
+        }, 3000);
+
+        expect(timerCallBack).not.toHaveBeenCalled();
+        jasmine.clock().tick(4000)
+        expect(timerCallBack).toHaveBeenCalled()
+    })
+})
