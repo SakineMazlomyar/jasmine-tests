@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "matchers": "jasmine matchers.js",
-    "each": "jasmine each.js"
+    "each": "jasmine each.js",
+    "spies": "jasmine spies.js",
+    "jasmine": "jasmine jasmine.js"
   },
   "author": "",
   "license": "ISC",

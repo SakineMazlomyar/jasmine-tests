@@ -71,3 +71,15 @@ describe('jasmine.arrayContaining with a spy', () => {
 
 })
 
+describe('jasmine.stringMatching and with a createSpy', () => {
+    let foo
+
+    beforeEach(()=>{
+        foo = jasmine.createSpy('callback')
+        foo("sakine mazlomyar")
+    })
+
+    it('should show foo contains sakine', ()=>{
+        expect(foo).toHaveBeenCalledOnceWith(jasmine.stringMatching(/sakine/i))
+    })
+})
